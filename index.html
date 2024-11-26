@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Análisis de Datos</title>
+    <!-- LO QUE SIGUE ES EL CSS -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .input-form {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+      }
+
+      .input-group {
+        margin-bottom: 15px;
+      }
+
+      input {
+        padding: 8px;
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .results {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+      }
+
+      .results h3 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      .results p {
+        margin: 8px 0;
+        color: #666;
+      }
+
+      .chart-container {
+        width: 800px;
+        height: 600px;
+        margin: 20px auto;
+      }
+    </style>
+    <!-- TERMINA CSS-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Análisis de Datos</h1>
+      
+      <div class="input-form">
+        <div class="input-group">
+          <input type="number" id="xValue" placeholder="Gasto Publicitario">
+          <input type="number" id="yValue" placeholder="Ingresos">
+          <button onclick="addPoint()">Agregar Punto</button>
+          <button onclick="clearData()">Limpiar Datos</button>
+        </div>
+      </div>
+
+      <div class="results">
+        <h3>Resultados del Análisis</h3>
+        <p>Ecuación de regresión: <span id="regression">-</span></p>
+        <p>Coeficiente de correlación (r): <span id="correlation">-</span></p>
+        <p>Coeficiente de determinación (r²): <span id="determination">-</span></p>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="scatterChart"></canvas>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
